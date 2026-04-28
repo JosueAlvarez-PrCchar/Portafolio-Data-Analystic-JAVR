@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Josue Álvarez | Data Analyst</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<video autoplay muted loop playsinline id="video-fondo">
+    <source src="bg.mp4.mp4" type="video/mp4">
+    Tu navegador no soporta videos.
+</video>
+
+    <header>
+        <div class="nav-container">
+            <div class="logo-box">
+                Josue Álvarez — <span class="gold-text-span">Analista de Datos</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#hero">Inicio</a></li>
+                    <li><a href="#proyectos">Proyectos</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="hero">
+        <div class="hero-master-card">
+            <h1>Josue Álvarez</h1>
+            <p class="sub-title">Ingeniero Estadístico</p>
+            <p class="hero-desc">Especialista en Modelado de Datos, Machine Learning y Business Intelligence.</p>
+            
+            <div class="hero-btns">
+                <a href="#proyectos" class="btn-gold">Ver Portafolio</a>
+                <a href="#contacto" class="btn-gold">Hablemos</a>
+            </div>
+        </div>
+    </section>
+
+<section id="herramientas">
+    <h2 class="section-title">Tecnologías y herramientas</h2>
+    <div class="tech-container">
+        
+        <div class="tech-category">
+            <h4>Análisis & Modelado</h4>
+            <div class="tech-icons">
+                <div class="tech-item">
+                    <i class="fab fa-python"></i>
+                    <div class="tech-description">
+                        <h5>Python</h5>
+                        <p>Uso principal en limpieza de datos masivos (Pandas), automatización de tareas y desarrollo de modelos de Machine Learning.</p>
+                    </div>
+                </div>
+                <div class="tech-item">
+                    <i class="fab fa-r-project"></i>
+                    <div class="tech-description">
+                        <h5>R Language</h5>
+                        <p>Especializado en análisis estadístico riguroso, pruebas de hipótesis y visualización avanzada de datos científicos.</p>
+                    </div>
+                </div>
+                <div class="tech-item">
+                    <i class="fas fa-database"></i>
+                    <div class="tech-description">
+                        <h5>SQL</h5>
+                        <p>Extracción, manipulación y gestión de bases de datos relacionales para consultas complejas y arquitectura de datos.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="tech-category">
+            <h4>Business Intelligence</h4>
+            <div class="tech-icons">
+                <div class="tech-item">
+                    <i class="fas fa-chart-pie"></i>
+                    <div class="tech-description">
+                        <h5>Tableau</h5>
+                        <p>Creación de historias visuales de alto impacto y dashboards ejecutivos para la toma de decisiones basada en datos.</p>
+                    </div>
+                </div>
+                <div class="tech-item">
+                    <i class="fas fa-bolt"></i>
+                    <div class="tech-description">
+                        <h5>Power BI</h5>
+                        <p>Modelado de datos empresariales y conexión de múltiples fuentes para reportes dinámicos en tiempo real.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <section id="proyectos">
+        <h2 class="section-title">Proyectos Personales</h2>
+        <div class="grid-container">
+            <div class="card-gold-animate" onclick="openModal('modal-ml')">
+                <div class="card-content">
+                    <i class="fas fa-brain fa-3x gold-icon"></i>
+                    <h3>Machine Learning</h3>
+                    <p>Empresariales, Modelado y Predicciones.</p>
+                </div>
+            </div>
+            <div class="card-gold-animate" onclick="openModal('modal-viz')">
+                <div class="card-content">
+                    <i class="fas fa-chart-line fa-3x gold-icon"></i>
+                    <h3>Visualización</h3>
+                    <p>Dashboards, Gráficos de Barras y Puntos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="modal-ml" class="modal">
+        <div class="modal-body">
+            <span class="close-btn" onclick="closeModal('modal-ml')">&times;</span>
+            <h2 class="modal-title">Machine Learning</h2>
+            <div class="sub-grid">
+                <div class="sub-card"><h4>Proyectos Empresariales</h4><p>Análisis de impacto y optimización.</p></div>
+                <div class="sub-card"><h4>Modelado</h4><p>Arquitecturas predictivas avanzadas.</p></div>
+                <div class="sub-card"><h4>Predicciones</h4><p>Forecasting y series de tiempo.</p></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-viz" class="modal">
+        <div class="modal-body">
+            <span class="close-btn" onclick="closeModal('modal-viz')">&times;</span>
+            <h2 class="modal-title">Visualización</h2>
+            <div class="sub-grid">
+                <div class="sub-card"><h4>Dashboards</h4><p>Interactividad en Power BI y Tableau.</p></div>
+                <div class="sub-card"><h4>Gráficos de Barras</h4><p>Comparativas dinámicas complejas.</p></div>
+                <div class="sub-card"><h4>Gráficos de Puntos</h4><p>Análisis de dispersión y tendencias.</p></div>
+            </div>
+        </div>
+    </div>
+
+    <footer id="contacto">
+        <h2 class="section-title-small">Conexión Profesional</h2>
+        <div class="social-buttons">
+            <a href="mailto:josue.alvarez021204@gmail.com" class="btn-social mail" title="Email"><i class="fas fa-envelope"></i></a>
+            <a href="https://wa.me/50587980903" class="btn-social whatsapp" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://www.linkedin.com/in/vicent-alvarez-507a95239" class="btn-social linkedin" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://www.facebook.com/Alvarez Joss" class="btn-social fb" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.freelancer.com/u/JosueA2004" class="btn-social free" title="Freelancer"><i class="fas fa-laptop-code"></i></a>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

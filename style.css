@@ -1,0 +1,219 @@
+:root {
+    --dark-bg: #010a1a; /* Azul noche profundo (no negro) */
+    --accent-blue: #00e5ff; /* Cian/Azul eléctrico VIBRANTE */
+    --silver: #f0f0f0; /* Blanco plata brillante */
+    --blue-gradient: linear-gradient(90deg, #007791, #00e5ff, #ffffff, #00e5ff, #007791);
+    --card-bg: rgba(5, 20, 45, 0.9); /* Tarjeta azul profundo pero visible */
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; scroll-behavior: smooth; }
+
+body {
+    background-color: var(--dark-bg);
+    color: var(--silver);
+    font-family: 'Montserrat', sans-serif;
+    overflow-x: hidden;
+}
+
+/* --- VIDEO DE FONDO: Ahora más brillante --- */
+#video-fondo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -2;
+    object-fit: cover;
+    /* Subimos el brillo de 30% a 60% para que se aprecie el video */
+    filter: brightness(30%) contrast(100%); 
+}
+
+/* --- HEADER: Diseño Píldora --- */
+header {
+    padding: 15px 5%;
+    background: rgba(0, 10, 30, 0.85);
+    backdrop-filter: blur(15px);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container { display: flex; justify-content: space-between; align-items: center; }
+
+.logo-box {
+    padding: 8px 25px;
+    border: 2px solid var(--accent-blue); /* Borde más grueso */
+    border-radius: 50px;
+    font-family: 'Cinzel', serif;
+    font-weight: bold;
+    font-size: 0.9rem;
+    color: white;
+    box-shadow: 0 0 15px rgba(0, 229, 255, 0.5); /* Resplandor */
+}
+
+nav ul { display: flex; list-style: none; gap: 20px; }
+nav a { text-decoration: none; color: white; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 2px; transition: 0.3s; }
+nav a:hover { color: var(--accent-blue); text-shadow: 0 0 10px var(--accent-blue); }
+
+/* --- HERO (Ajustado) --- */
+#hero {
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 100px 20px 0;
+}
+
+.hero-master-card {
+    position: relative;
+    
+    /* MODIFICACIÓN 1: Fondo mucho más oscuro y opaco */
+    background: rgba(1, 10, 25, 0.95); /* De azul claro a azul noche profundo */
+    
+    padding: 70px 50px;
+    border-radius: 25px;
+    text-align: center;
+    max-width: 800px;
+    
+    /* MODIFICACIÓN 2: Borde celeste vibrante a azul suave */
+    border: 1px solid rgba(0, 150, 255, 0.3); /* Un azul más sobrio y menos brillante */
+    
+    backdrop-filter: blur(10px);
+    
+    /* MODIFICACIÓN 3: Sombra más oscura y menos difusa */
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8); /* Menos resplandor celeste */
+}
+
+/* --- Y MODIFICA EL BORDE GIRATORIO AQUÍ --- */
+.hero-master-card::after {
+    content: '';
+    position: absolute;
+    inset: -2px; /* Un pelín más delgado */
+    
+    /* MODIFICACIÓN 4: Degradado de celeste neón a azul oscuro/plata */
+    background: linear-gradient(90deg, #004a7a, #0096ff, #0a1e3e, #0096ff, #004a7a);
+    background-size: 200% auto;
+    border-radius: 27px;
+    z-index: -1;
+    animation: borderFlow 6s linear infinite; /* Animación más lenta y sutil */
+}
+
+@keyframes borderFlow { 0% { background-position: 0% 50%; } 100% { background-position: 200% 50%; } }
+
+#hero h1 { font-family: 'Cinzel', serif; font-size: 4rem; letter-spacing: 4px; margin-bottom: 10px; color: white; text-shadow: 0 0 20px rgba(255,255,255,0.5); }
+.sub-title { color: var(--accent-blue); letter-spacing: 6px; text-transform: uppercase; margin-bottom: 25px; font-weight: bold; text-shadow: 0 0 10px var(--accent-blue); }
+.hero-desc { color: #ddd; font-weight: 300; line-height: 1.8; }
+
+/* BOTONES BRILLANTES */
+.hero-btns { display: flex; justify-content: center; gap: 20px; margin-top: 40px; }
+.btn-gold {
+    padding: 15px 30px;
+    color: var(--accent-blue) !important;
+    text-decoration: none;
+    border: 2px solid var(--accent-blue);
+    border-radius: 8px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    transition: 0.4s;
+    background: rgba(0, 229, 255, 0.1);
+    box-shadow: 0 0 15px rgba(0, 229, 255, 0.3);
+}
+.btn-gold:hover { background: var(--accent-blue); color: #000 !important; box-shadow: 0 0 30px var(--accent-blue); transform: translateY(-3px); }
+
+/* --- HERRAMIENTAS (Punto Medio) --- */
+#herramientas { padding: 40px 0 70px 0; text-align: center; }
+.tech-container { display: flex; justify-content: center; gap: 50px; flex-wrap: wrap; }
+.tech-category h4 { font-family: 'Cinzel', serif; color: var(--accent-blue); margin-bottom: 25px; font-size: 0.9rem; letter-spacing: 2px; text-shadow: 0 0 10px var(--accent-blue); }
+.tech-icons { display: flex; gap: 30px; justify-content: center; }
+.tech-item { position: relative; display: inline-block; }
+.tech-item i { font-size: 2.8rem; color: #888; transition: 0.4s ease; }
+.tech-item:hover i { color: var(--accent-blue); transform: scale(1.1); text-shadow: 0 0 20px var(--accent-blue); }
+
+/* Tooltip Vibrante */
+.tech-description {
+    position: absolute; bottom: 130%; left: 50%; transform: translateX(-50%) translateY(10px);
+    width: 240px; background: rgba(0, 10, 30, 0.98); border: 2px solid var(--accent-blue);
+    padding: 18px; border-radius: 12px; opacity: 0; visibility: hidden; transition: 0.4s; z-index: 100;
+}
+.tech-description h5 { color: var(--accent-blue); font-family: 'Cinzel'; margin-bottom: 8px; font-size: 1.1rem; }
+.tech-description p { font-size: 0.8rem; color: #eee; line-height: 1.5; }
+.tech-item:hover .tech-description { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0); }
+
+/* --- PROYECTOS (Vibrantes) --- */
+.section-title { font-family: 'Cinzel', serif; text-align: center; margin: 60px 0 40px; font-size: 2.8rem; color: var(--accent-blue); text-shadow: 0 0 15px var(--accent-blue); }
+.grid-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 35px; padding-bottom: 100px; }
+
+.card-gold-animate {
+    position: relative; width: 320px; height: 400px; background: #000; border-radius: 20px;
+    display: flex; justify-content: center; align-items: center; overflow: hidden; cursor: pointer;
+    transition: 0.4s ease;
+}
+
+/* Efecto ZOOM y BRILLO en hover */
+.card-gold-animate:hover {
+    transform: translateY(-15px) scale(1.05);
+    box-shadow: 0 15px 40px rgba(0, 229, 255, 0.5);
+}
+
+.card-gold-animate::before {
+    content: ''; position: absolute; width: 60%; height: 200%;
+    background: var(--blue-gradient); animation: rotate 6s linear infinite;
+}
+
+.card-gold-animate::after {
+    content: ''; position: absolute; inset: 4px; /* Borde interior visible */
+    background: #020f22; border-radius: 17px;
+}
+
+.card-content { z-index: 10; text-align: center; padding: 25px; }
+.card-content h3 { font-family: 'Cinzel', serif; color: var(--accent-blue); margin-bottom: 15px; font-size: 1.6rem; text-shadow: 0 0 10px var(--accent-blue); }
+.card-content p { color: #ccc; font-size: 0.9rem; }
+
+@keyframes rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+
+/* --- MODALES --- */
+.modal {
+    display: none; position: fixed; z-index: 2000; inset: 0;
+    background: rgba(0, 5, 15, 0.95); backdrop-filter: blur(15px);
+    justify-content: center; align-items: center;
+}
+.modal-body {
+    background: #010a1a; padding: 60px; border-radius: 25px;
+    border: 2px solid var(--accent-blue); max-width: 850px; width: 90%;
+    text-align: center; position: relative; box-shadow: 0 0 50px rgba(0, 229, 255, 0.3);
+}
+.sub-card { background: #05152d; padding: 20px; border-radius: 12px; border: 1px solid #1a3a6a; transition: 0.3s; }
+.sub-card:hover { border-color: var(--accent-blue); transform: translateY(-5px); box-shadow: 0 5px 15px rgba(0, 229, 255, 0.2); }
+.sub-card h4 { color: var(--accent-blue); font-family: 'Cinzel'; margin-bottom: 10px; }
+.close-btn { position: absolute; top: 25px; right: 30px; font-size: 2.5rem; color: white; cursor: pointer; transition: 0.3s; }
+.close-btn:hover { color: var(--accent-blue); }
+
+/* --- FOOTER: Bordes Giratorios Vibrantes --- */
+footer { text-align: center; padding: 80px 0; background: #00050d; border-top: 1px solid #111; }
+.social-buttons { display: flex; justify-content: center; flex-wrap: wrap; gap: 20px; margin-top: 40px; }
+
+.btn-social {
+    width: 70px; height: 70px; display: flex; align-items: center; justify-content: center;
+    border-radius: 50%; position: relative; text-decoration: none; transition: 0.4s ease;
+    background: #000; z-index: 1;
+}
+/* El borde giratorio neón */
+.btn-social::before {
+    content: ''; position: absolute; inset: -3px; border-radius: 50%;
+    background: conic-gradient(transparent, transparent, transparent, var(--social-color));
+    animation: rotateLogo 2s linear infinite; z-index: -1;
+}
+
+.mail { --social-color: #ea4335; }
+.whatsapp { --social-color: #25d366; }
+.linkedin { --social-color: #0077b5; }
+.fb { --social-color: #1877f2; }
+.free { --social-color: #29b2fe; }
+
+.btn-social i { font-size: 1.6rem; color: white; transition: 0.3s; }
+.btn-social:hover i { color: var(--social-color); transform: scale(1.2); }
+/* Brillo neón en hover */
+.btn-social:hover { box-shadow: 0 0 25px var(--social-color); transform: translateY(-8px); }
+
+@keyframes rotateLogo { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
